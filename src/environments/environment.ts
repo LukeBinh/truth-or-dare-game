@@ -5,7 +5,7 @@ export function mergeNewSetting(key: any, value: any): void {
 }
 
 export let environment: IEnvironment = {
-    apiUrl: 'https://localhost:7028/api/',
+    apiUrl: 'https://localhost:44309/api/',
     assestPath: '/assets'
 }
 

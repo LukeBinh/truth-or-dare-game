@@ -1,12 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { LoginModel } from '../models/login.model';
-import { BaseService } from './base.serivce';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { UserStoreService } from './user-store.service';
+import { Observable } from 'rxjs';
 import { TokenApiModel } from '../models/token-api.model';
+import { BaseService } from './base.serivce';
+import { RegisterModel } from '../models/login.model';
 
 
 @Injectable({
@@ -62,5 +60,9 @@ export class AuthService extends BaseService {
 
     public renewToken(tokenApi: TokenApiModel): Observable<TokenApiModel> { 
         return this.post('authentication/refresh', tokenApi);
+    }
+
+    public registerUser(model: RegisterModel): Observable<any> {
+        return this.post('authentication', model)
     }
 }  

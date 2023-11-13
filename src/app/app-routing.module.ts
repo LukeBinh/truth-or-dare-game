@@ -8,6 +8,11 @@ import { PlayComponent } from './components/play/play.component';
 
 const routes: Routes = [
     {
+        path: 'admin',
+        canActivate:[AuthGuard],
+        loadChildren: () => import('./common-module/admin/admin.module').then(m => m.AdminModule)
+    },
+    {
         path: 'login',
         component: LoginComponent
     },

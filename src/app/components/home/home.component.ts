@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
         private userStoreService: UserStoreService){}
 
     ngOnInit(): void {
-        this.authService.adminApi();
+        // this.authService.adminApi();
 
         this.userStoreService.getRoleFromStore().subscribe(res => {
             const roleFromToken = this.authService.getRoleFromToken();

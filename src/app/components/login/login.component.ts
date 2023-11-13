@@ -27,6 +27,7 @@ export class LoginComponent {
     onSubmit() { 
         this.authService.login(this.loginForm.value).subscribe(res => {
             if(res) { 
+                console.log(res);
                 this.authService.storeToken(res.accessToken);
                 this.authService.storeRefreshToken(res.refreshToken);
                 const tokenPayload = this.authService.decodeToken();
@@ -36,15 +37,5 @@ export class LoginComponent {
             }
         })
 
-    }
-
-    loginByAnonymousUser(){ 
-    //     this.authService.getByCode(Constants.anonymousUser).subscribe(res => {
-    //         if(res) {
-    //             sessionStorage.setItem('username', res.id);
-    //             sessionStorage.setItem('userrole', res.role);
-    //             this.router.navigate(['/home']); 
-    //         }
-    //     })
     }
 }

@@ -14,7 +14,7 @@ export class BaseService {
     }
 
     protected post(url: string, data: any = {}, headers?: HttpHeaders): Observable<any> {
-        return this.http.post(this.resolveBaseUrl()+ url, data, { headers: headers });
+        return this.http.post(this.resolveBaseUrl() + url, data, { headers: headers });
     }
 
     protected put(url: string, data: any = {}, headers?: HttpHeaders): Observable<any> {
